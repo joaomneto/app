@@ -13,11 +13,15 @@
 ## Usage
 
 1. Install the app on your GitHub Repositories: [github.com/apps/wip](https://github.com/apps/wip)
-2. The WIP bot sets status of the request title to pending if it finds  "wip", "work in progress" or "do not merge" (not case-sensitive) in
+2. If the WIP bot finds "wip", "work in progress" or "do not merge" (not case-sensitive) in
    1. The pull request title
    2. One of the pull request labels
    3. One of the pull request commit messages
-3. If it doesn’t find the words anywhere, it will set status to success
+3. If it finds "fixup!" or "squash!" (case-sensitive) at the beginning of
+   the commit message (indicating that the commit [should be squashed into
+   another commit](https://git-scm.com/docs/git-rebase#git-rebase---autostash))
+   it sets status of the request title to pending
+4. If it doesn’t find the words anywhere, it will set status to success
 
 If you use the WIP App **we strongly recommend** to [subscribe to our updates](https://github.com/wip/app/issues/89).
 If you like it, please star this repository :)
